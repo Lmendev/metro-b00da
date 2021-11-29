@@ -37,6 +37,7 @@ export class App {
                 else
                     console.log(`La ruta con menor cantidad de estaciones entre ${from} y ${to} para un tren ${color} es ${shortestPath.join('->')}`)
                 
+                console.log('\n')
                 options = await optionsMenu()
             } while(options.opt !== 'Salir')
         })
