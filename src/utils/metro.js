@@ -49,7 +49,10 @@ const generateGraph = stations => {
         let map = new Map()
 
         station.adjacentStations.forEach(s => {
-            map.set(s.name, s.weight)
+            let time = stations.filter(station => station.name === s.name)[0].time || 0
+            let totalCost = s.weight + time
+
+            map.set(s.name, totalCost)
         })
         
         graph.set(station.name, map)

@@ -59,6 +59,7 @@ export const network = {
         },
         {
             "name": "E",
+            "time": 10,
             "adjacentStations": [
                 {
                     "name": "D",
@@ -114,6 +115,7 @@ export const network = {
         {
             "name": "I",
             "color": "Verde",
+            "time": 50,
             "adjacentStations": [
                 {
                     "name": "H",
