@@ -6,42 +6,124 @@ export const network = {
     "stations": [
         {
             "name": "A",
-            "adjacentStations": ["B"]
+            "adjacentStations": [
+                {
+                    "name": "B",
+                    "weight": 1
+                }
+            ]
         },
         {
             "name": "B",
-            "adjacentStations": ["A", "C"]
+            "time": 260,
+            "adjacentStations": [
+                {
+                    "name": "A",
+                    "weight": 1
+                }, 
+                {
+                    "name": "C",
+                    "weight": 1
+                }
+            ]
         },
         {
             "name": "C",
-            "adjacentStations": ["B", "D", "G"]
+            "adjacentStations": [
+                {
+                    "name": "B",
+                    "weight": 1
+                },
+                {
+                    "name": "D",
+                    "weight": 1
+                },
+                {
+                    "name": "G",
+                    "weight": 1
+                }
+            ]
         },
         {
             "name": "D",
-            "adjacentStations": ["C", "E"]
+            "adjacentStations": [
+                {
+                    "name": "C",
+                    "weight": 1
+                },
+                {
+                    "name": "E",
+                    "weight": 1
+                }
+            ]
         },
         {
             "name": "E",
-            "adjacentStations": ["D", "F"]
+            "adjacentStations": [
+                {
+                    "name": "D",
+                    "weight": 1
+                },
+                {
+                    "name": "F",
+                    "weight": 1
+                }
+            ]
         },
         {
             "name": "F",
-            "adjacentStations": ["E", "I"]
+            "adjacentStations": [
+                {
+                    "name": "E",
+                    "weight": 1
+                },
+                {
+                    "name": "I",
+                    "weight": 1
+                }
+            ]
         },
         {
             "name": "G",
             "color": "Verde",
-            "adjacentStations": ["C", "H"]
+            "adjacentStations": [
+                {
+                    "name": "C",
+                    "weight": 1
+                },
+                {
+                    "name": "H",
+                    "weight": 1
+                }
+            ]
         },
         {
             "name": "H",
             "color": "Rojo",
-            "adjacentStations": ["G", "I"]
+            "adjacentStations": [
+                {
+                    "name": "G",
+                    "weight": 1
+                },
+                {
+                    "name": "I",
+                    "weight": 1
+                }
+            ]
         },
         {
             "name": "I",
             "color": "Verde",
-            "adjacentStations": ["H", "F"]
+            "adjacentStations": [
+                {
+                    "name": "H",
+                    "weight": 1
+                },
+                {
+                    "name": "F",
+                    "weight": 1
+                }
+            ]
         }
     ]
 }

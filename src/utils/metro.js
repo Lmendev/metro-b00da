@@ -21,11 +21,15 @@ const generateTrainPath = (stations, color) => {
 
     stationsToDelete.forEach(stationToDelete => {
         stations = stations.map(station => {
-            if (!station.adjacentStations.includes(stationToDelete.name))
+            if (!station.adjacentStations.filter(s => s.name === stationToDelete.name).length)
                 return station
 
-            let adjacentStationsWithoutStationToDelete = station.adjacentStations.filter(name => name !== stationToDelete.name)
-            let newAdjacentStations                    = stationToDelete.adjacentStations.filter(name => name !== station.name)
+            let adjacentStationsWithoutStationToDelete = station.adjacentStations.filter(s => s.name !== stationToDelete.name)
+            let newAdjacentStations                    = stationToDelete.adjacentStations.filter(s => s.name !== station.name)
+
+            let weightFromStationToStationToDelete = station.adjacentStations.filter(s => s.name === stationToDelete.name)[0].weight
+
+            newAdjacentStations = newAdjacentStations.map(s => { return { ...s, weight: s.weight +  weightFromStationToStationToDelete } })
 
             let adjacentStations = [ ...adjacentStationsWithoutStationToDelete , ...newAdjacentStations ] 
 
@@ -44,8 +48,8 @@ const generateGraph = stations => {
     stations.forEach(station => {
         let map = new Map()
 
-        station.adjacentStations.forEach(stationName => {
-            map.set(stationName, 1)
+        station.adjacentStations.forEach(s => {
+            map.set(s.name, s.weight)
         })
         
         graph.set(station.name, map)
