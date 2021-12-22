@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "node src",
-    "dev": "nodemon src",
+    "dev": "nodemon src/indexDev.js",
     "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest"
   },
   "keywords": [
