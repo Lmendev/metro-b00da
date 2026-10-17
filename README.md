@@ -1,3 +1,5 @@
+> 🗄️ **Archived.** A console app I built in 2021 as a technical challenge for a software developer role — I got the job and worked there for a while. It finds the shortest route between two metro stations using Dijkstra's algorithm, with optional train colors. Tested with Node.js 14; newer versions may need updated dependencies.
+
 <h1 align="center">🚂 Metro b00da</h1>
 
 <p align="center">
